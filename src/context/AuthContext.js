@@ -31,6 +31,7 @@ const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     userObserver();
     navigate("/");
+    
   }, []);
 
   const createUser = async (newUser, displayName) => {
