@@ -2,7 +2,7 @@ https://nmekinci.github.io/movie-app/
 
 
 
-# Project-009 : Movie App (RP-09)
+# Project-009 : Movie App
 
 ## Description
 
