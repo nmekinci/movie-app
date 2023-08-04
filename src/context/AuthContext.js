@@ -30,11 +30,12 @@ const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     userObserver();
+    navigate("/");
   }, []);
 
   const createUser = async (newUser, displayName) => {
     //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
-    const {name,lastName,email,password} = newUser;
+    const { name, lastName, email, password } = newUser;
     // console.log(email);
     try {
       let userCredential = await createUserWithEmailAndPassword(
@@ -67,7 +68,9 @@ const AuthContextProvider = ({ children }) => {
         password
       );
       navigate("/");
-      toastSuccessNotify("Logged in successfully with " + email + " this email adress..");
+      toastSuccessNotify(
+        "Logged in successfully with " + email + " this email adress.."
+      );
       console.log(userCredential);
     } catch (error) {
       toastErrorNotify(error.message);
@@ -76,7 +79,11 @@ const AuthContextProvider = ({ children }) => {
 
   const logOut = (displayName) => {
     signOut(auth);
-    toastSuccessNotify(displayName ? "Logged out successfully as " + displayName : "Logged out successfully!");
+    toastSuccessNotify(
+      displayName
+        ? "Logged out successfully as " + displayName
+        : "Logged out successfully!"
+    );
     setCurrentUser(false);
   };
 
