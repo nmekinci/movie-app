@@ -12,7 +12,7 @@ const AppRouter = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route index path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route element={<PrivateRouter />}>

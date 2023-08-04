@@ -30,8 +30,8 @@ const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     userObserver();
-    navigate("/");
-    
+    // navigate("/");
+
   }, []);
 
   const createUser = async (newUser, displayName) => {
